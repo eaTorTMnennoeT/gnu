@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(gh:*)",
+      "Bash(cmd.exe /c \"gh auth status\")",
+      "Bash(cmd.exe /c \"where gh\")",
+      "Bash(powershell -Command \"Get-Command gh -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(cmd.exe /c \"gh --version\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' --version\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' auth status\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}
