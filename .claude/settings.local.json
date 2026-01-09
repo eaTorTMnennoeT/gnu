@@ -11,7 +11,19 @@
       "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' --version\")",
       "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' auth status\")",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' api user --jq ''.login, .email''\")",
+      "Bash(git config:*)",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' repo create gnu --public --source=''c:\\\\Users\\\\admin\\\\Desktop\\\\test'' --remote=origin --push\")",
+      "Bash(powershell -Command \"& ''C:\\\\Program Files\\\\GitHub CLI\\\\gh.exe'' repo edit eaTorTMnennoeT/gnu --visibility private --accept-visibility-change-consequences\")",
+      "Bash(git push:*)",
+      "Bash(php -v:*)",
+      "Bash(where:*)",
+      "Bash(powershell -Command:*)",
+      "Bash(\"C:\\\\php\\\\php.exe\" -v)",
+      "Bash(timeout:*)",
+      "Bash(cat:*)"
     ]
   }
 }

@@ -1,7 +1,8 @@
 <?php $current_page = 'gallery'; ?>
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+<html lang="ko">
 <head>
+    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');</script>
     <?php include 'includes/head.php'; ?>
     <title>사진갤러리 - 그누보드</title>
     <style>

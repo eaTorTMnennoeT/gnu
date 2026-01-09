@@ -1,7 +1,8 @@
 <?php $current_page = 'home'; ?>
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+<html lang="ko">
 <head>
+    <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'light');</script>
     <?php include 'includes/head.php'; ?>
     <title>그누보드 프리미엄 테마</title>
     <style>

@@ -58,7 +58,7 @@
                     <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">밈갤러리</span></a></li>
                 </ul>
             </li>
-            <li class="nav-item">
+            <li class="nav-item<?php echo ($current_page == 'pds') ? ' open' : ''; ?>">
                 <a href="#" class="nav-link has-sub">
                     <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
                     <span class="nav-text">자료실</span>
@@ -66,6 +66,7 @@
                     <svg class="nav-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9,18 15,12 9,6"/></svg>
                 </a>
                 <ul class="sub-menu">
+                    <li class="nav-item"><a href="pds.php" class="nav-link<?php echo ($current_page == 'pds') ? ' active' : ''; ?>"><span class="nav-text">자료실</span></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">스킨/테마</span></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">플러그인</span></a></li>
                     <li class="nav-item"><a href="#" class="nav-link"><span class="nav-text">소스코드</span></a></li>
@@ -77,7 +78,7 @@
         <div class="nav-label">회원</div>
         <ul class="nav-menu">
             <li class="nav-item"><a href="#" class="nav-link"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span class="nav-text">회원목록</span></a></li>
-            <li class="nav-item"><a href="#" class="nav-link"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span class="nav-text">쪽지함</span><span class="nav-badge">3</span></a></li>
+            <li class="nav-item"><a href="#" class="nav-link" onclick="openProfileModal('message'); return false;"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span class="nav-text">쪽지함</span><span class="nav-badge">3</span></a></li>
             <li class="nav-item"><a href="#" class="nav-link"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg><span class="nav-text">포인트</span></a></li>
             <li class="nav-item"><a href="#" class="nav-link"><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg><span class="nav-text">스크랩</span></a></li>
         </ul>
