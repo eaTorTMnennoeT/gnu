@@ -1,0 +1,27 @@
+/* ========================================
+   그누보드 프리미엄 테마 - 통합 CSS
+   ========================================
+
+   각 파일별 역할:
+   - premium-base.css      : CSS 변수, 리셋, body 기본 스타일
+   - premium-sidebar.css   : 사이드바 네비게이션
+   - premium-header.css    : 헤더, 알림, 프로필 드롭다운, 테마 토글
+   - premium-layout.css    : 메인 레이아웃 (wrapper, content)
+   - premium-main.css      : 메인 페이지, 페이지 타이틀, 베스트 섹션
+   - premium-board.css     : 일반 게시판 (목록/상세/글쓰기/댓글)
+   - premium-search.css    : 전역 검색 페이지
+   - premium-pds.css       : 자료실 (목록/상세/글쓰기)
+   - premium-components.css: 공통 컴포넌트 (모달, 토스트, 버튼 등)
+
+   캐시: head.php에서 filemtime() 기반으로 자동 갱신
+   ======================================== */
+
+@import url('premium-base.css?v=20260110');
+@import url('premium-sidebar.css?v=20260110');
+@import url('premium-header.css?v=20260110');
+@import url('premium-layout.css?v=20260110');
+@import url('premium-main.css?v=20260110');
+@import url('premium-board.css?v=20260110');
+@import url('premium-search.css?v=20260110');
+@import url('premium-pds.css?v=20260110');
+@import url('premium-components.css?v=20260110');

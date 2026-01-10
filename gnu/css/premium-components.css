@@ -1,0 +1,603 @@
+/* ========================================
+   Premium Components - 공통 UI 컴포넌트
+   (모달, 토스트, 드롭다운 오버레이, 버튼 등)
+   ======================================== */
+
+/* ========================================
+   토스트 알림
+   ======================================== */
+
+.toast-notification {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 14px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    z-index: 10000;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.toast-notification.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.toast-notification.success .toast-icon {
+    color: #10b981;
+}
+
+.toast-notification.error .toast-icon {
+    color: #ef4444;
+}
+
+.toast-notification.info .toast-icon {
+    color: #6366f1;
+}
+
+.toast-icon {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ========================================
+   신고 모달
+   ======================================== */
+
+.report-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.report-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.report-modal {
+    background: var(--bg-card);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 420px;
+    transform: translateY(30px);
+    transition: transform 0.3s ease;
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.report-modal-overlay.show .report-modal {
+    transform: translateY(0);
+}
+
+.report-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.report-modal-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.report-modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--bg-main);
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.report-modal-close:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.report-modal-body {
+    padding: 20px;
+}
+
+.report-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.report-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.report-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--bg-main);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.report-option:hover {
+    background: rgba(233, 69, 96, 0.1);
+}
+
+.report-option input {
+    display: none;
+}
+
+.report-radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.report-option input:checked ~ .report-radio {
+    border-color: var(--accent);
+}
+
+.report-option input:checked ~ .report-radio::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.report-detail {
+    width: 100%;
+    padding: 12px 14px;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 14px;
+    color: var(--text-primary);
+    resize: none;
+    height: 80px;
+    outline: none;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.report-detail:focus {
+    border-color: var(--accent);
+}
+
+.report-detail::placeholder {
+    color: var(--text-light);
+}
+
+.report-modal-footer {
+    display: flex;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.report-btn-cancel,
+.report-btn-submit {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.report-btn-cancel {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.report-btn-cancel:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.report-btn-submit {
+    background: linear-gradient(135deg, var(--accent), #ff6b6b);
+    border: none;
+    color: white;
+}
+
+.report-btn-submit:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.report-btn-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ========================================
+   드롭다운 오버레이 (모바일)
+   ======================================== */
+
+.dropdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 899;
+    display: none;
+}
+
+.dropdown-overlay.active {
+    display: block;
+}
+
+/* ========================================
+   버튼 비활성화 상태
+   ======================================== */
+
+.content-action-btn:disabled,
+.comment-like:disabled,
+.file-download:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   공통 배지 스타일
+   ======================================== */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 4px;
+    line-height: 1.4;
+}
+
+.badge-new {
+    background: rgba(233, 69, 96, 0.15);
+    color: var(--accent);
+}
+
+.badge-hot {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+}
+
+.badge-notice {
+    background: rgba(99, 102, 241, 0.15);
+    color: #6366f1;
+}
+
+.badge-secret {
+    background: rgba(107, 114, 128, 0.15);
+    color: #6b7280;
+}
+
+/* ========================================
+   공통 폼 스타일
+   ======================================== */
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-light);
+}
+
+/* ========================================
+   공통 버튼 스타일
+   ======================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent), #ff6b6b);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.btn-secondary {
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.btn-secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+}
+
+.btn-success:hover {
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.btn-danger:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+/* ========================================
+   페이지네이션
+   ======================================== */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 24px 0;
+}
+
+.pagination a,
+.pagination strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.pagination a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.pagination strong,
+.pagination .active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.pagination .pg_prev,
+.pagination .pg_next,
+.pagination .pg_start,
+.pagination .pg_end {
+    font-weight: bold;
+}
+
+/* ========================================
+   스켈레톤 로딩
+   ======================================== */
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--bg-main) 25%,
+        var(--border) 50%,
+        var(--bg-main) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.skeleton-text {
+    height: 14px;
+    margin-bottom: 8px;
+}
+
+.skeleton-title {
+    height: 20px;
+    width: 60%;
+    margin-bottom: 12px;
+}
+
+.skeleton-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* ========================================
+   스크롤바 커스텀
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-light);
+}
+
+/* 다크모드 스크롤바 */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: #444;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* ========================================
+   유틸리티 클래스
+   ======================================== */
+
+.sr-only,
+.sound_only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-accent { color: var(--accent); }
+.text-success { color: #10b981; }
+.text-danger { color: #ef4444; }
+.text-warning { color: #f59e0b; }
+
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+
+.d-flex { display: flex; }
+.d-none { display: none; }
+.d-block { display: block; }
+
+.flex-wrap { flex-wrap: wrap; }
+.align-center { align-items: center; }
+.justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
+
+.gap-1 { gap: 8px; }
+.gap-2 { gap: 16px; }
+.gap-3 { gap: 24px; }
+
+/* ========================================
+   반응형 유틸리티
+   ======================================== */
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .show-mobile {
+        display: none !important;
+    }
+}

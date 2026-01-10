@@ -1,0 +1,485 @@
+/* ========================================
+   Premium Sidebar - 사이드바
+   ======================================== */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    height: 100svh;
+    background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 100%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-header {
+    padding: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--accent) 0%, #ff6b6b 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: white;
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.logo-text { color: white; font-size: 16px; font-weight: 600; }
+.logo-text span { color: var(--gold); }
+
+.nav-section {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px;
+}
+
+.nav-section::-webkit-scrollbar { width: 3px; }
+.nav-section::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
+
+.nav-label {
+    color: rgba(255,255,255,0.4);
+    font-size: 9px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 10px 6px;
+    margin-top: 4px;
+}
+
+.nav-menu { list-style: none; }
+.nav-item { margin-bottom: 1px; }
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    border-radius: 0 2px 2px 0;
+    transition: height 0.2s;
+}
+
+.nav-link:hover { background: rgba(255,255,255,0.08); color: white; }
+.nav-link.active { background: rgba(233, 69, 96, 0.15); color: white; }
+.nav-link.active::before { height: 16px; }
+
+.nav-icon { width: 16px; height: 16px; opacity: 0.8; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; }
+.nav-icon svg { width: 16px; height: 16px; }
+.nav-link:hover .nav-icon, .nav-link.active .nav-icon { opacity: 1; }
+.nav-text { font-size: 12px; font-weight: 500; flex: 1; }
+
+.nav-badge {
+    background: var(--accent);
+    color: white;
+    font-size: 9px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+}
+
+.nav-badge.gold {
+    background: linear-gradient(135deg, var(--gold) 0%, #c9a227 100%);
+    color: var(--primary);
+}
+
+.nav-arrow { width: 14px; height: 14px; opacity: 0.5; transition: transform 0.2s; }
+.nav-item.open > .nav-link .nav-arrow { transform: rotate(90deg); }
+
+.sub-menu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+    background: rgba(0,0,0,0.15);
+    border-radius: 6px;
+    margin: 2px 0 2px 8px;
+}
+
+.nav-item.open > .sub-menu { max-height: 500px; }
+.sub-menu .nav-link { padding: 6px 10px 6px 26px; font-size: 11px; }
+.sub-menu .nav-link::before { display: none; }
+
+.sidebar-footer {
+    padding: 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.sidebar-footer-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 6px;
+    color: rgba(255,255,255,0.7);
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sidebar-footer-btn:hover { background: rgba(255,255,255,0.1); color: white; }
+
+/* 사이드바 오버레이 */
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* ========================================
+   사이드바 모달
+   ======================================== */
+
+.sidebar-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sidebar-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: var(--bg-card);
+    border-radius: 16px;
+    width: 90%;
+    max-width: 380px;
+    max-height: 90vh;
+    z-index: 2001;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-modal.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.sidebar-modal-lg {
+    max-width: 480px;
+}
+
+.sidebar-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-main);
+}
+
+.sidebar-modal-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.sidebar-modal-title svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+}
+
+.sidebar-modal-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: var(--bg-card);
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.sidebar-modal-close:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.sidebar-modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.sidebar-modal-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.sidebar-modal-tab {
+    flex: 1;
+    padding: 10px;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.sidebar-modal-tab:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.sidebar-modal-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+.sidebar-modal-content {
+    min-height: 100px;
+}
+
+.sidebar-modal-info {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 14px;
+    padding: 30px 0;
+}
+
+.sidebar-modal-footer {
+    display: flex;
+    gap: 10px;
+    padding: 16px 20px;
+    border-top: 1px solid var(--border);
+    background: var(--bg-main);
+}
+
+.sidebar-modal-btn {
+    flex: 1;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-modal-btn.primary {
+    background: linear-gradient(135deg, var(--accent), #ff6b6b);
+    border: none;
+    color: white;
+}
+
+.sidebar-modal-btn.primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.sidebar-modal-btn.secondary {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.sidebar-modal-btn.secondary:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* 포인트 모달 */
+.point-summary {
+    background: linear-gradient(135deg, var(--accent), #ff6b6b);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.point-current {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.point-label {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+}
+
+.point-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+}
+
+/* 게임센터 모달 */
+.game-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.game-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    background: var(--bg-main);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.game-item:hover {
+    background: rgba(233, 69, 96, 0.1);
+    transform: translateX(4px);
+}
+
+.game-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.game-info {
+    flex: 1;
+}
+
+.game-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.game-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.game-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 8px;
+    background: var(--accent);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.game-badge.new {
+    background: linear-gradient(135deg, #10b981, #34d399);
+}
+
+/* 반응형 - 사이드바 */
+@media (max-width: 992px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.active { transform: translateX(0); }
+
+    .sidebar-modal {
+        width: 95%;
+        max-height: 85vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-modal-header {
+        padding: 14px 16px;
+    }
+
+    .sidebar-modal-body {
+        padding: 16px;
+    }
+
+    .sidebar-modal-footer {
+        padding: 12px 16px;
+    }
+
+    .point-value {
+        font-size: 28px;
+    }
+}

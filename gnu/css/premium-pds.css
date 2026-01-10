@@ -1,0 +1,1289 @@
+/* ========================================
+   Premium PDS - 자료실 스킨
+   ======================================== */
+
+/* 자료실 페이지 타이틀 */
+.page-title-section.pds-page .page-title-icon.pds-icon {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.write-btn.pds-btn,
+.pds-btn.btn-submit {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.write-btn.pds-btn:hover,
+.pds-btn.btn-submit:hover {
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* 베스트 자료 섹션 */
+.best-section.pds-best .best-tab.active {
+    color: #10b981;
+    border-bottom-color: #10b981;
+}
+
+/* ========================================
+   자료실 목록
+   ======================================== */
+
+/* 자료실 목록 테이블 */
+.pds-board .board-table-header,
+.pds-header {
+    grid-template-columns: auto 1fr 100px 55px 50px 40px;
+}
+
+.pds-board .board-row,
+.pds-row {
+    grid-template-columns: auto 1fr 100px 55px 50px 40px;
+}
+
+/* 파일 아이콘 */
+.file-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.file-icon.zip { color: #f59e0b; }
+.file-icon.pdf { color: #ef4444; }
+.file-icon.doc { color: #3b82f6; }
+.file-icon.img { color: #ec4899; }
+.file-icon.video { color: #8b5cf6; }
+.file-icon.music { color: #10b981; }
+
+/* 다운로드 비용 */
+.post-download-cost {
+    font-size: 12px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.post-download-cost.cash { color: var(--accent); }
+.post-download-cost.point { color: #f59e0b; }
+.post-download-cost.free { color: var(--text-light); }
+
+/* 자료실 카테고리 배지 */
+.pds-board .category-badge.program { background: rgba(99, 102, 241, 0.1); color: #6366f1; }
+.pds-board .category-badge.document { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.pds-board .category-badge.image { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+.pds-board .category-badge.video { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.pds-board .category-badge.music { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+/* 자료실 공지사항 행 - 제목/작성자 색상 보장 */
+.pds-board .board-row .post-title-text,
+.pds-board .board-row.notice-row .post-title-text,
+.pds-row .post-title-text,
+.pds-row.notice-row .post-title-text {
+    color: var(--text-primary);
+}
+
+.pds-board .board-row .post-author,
+.pds-board .board-row.notice-row .post-author,
+.pds-row .post-author,
+.pds-row.notice-row .post-author {
+    color: var(--text-secondary);
+}
+
+/* 다크모드 자료실 공지 배경 */
+[data-theme="dark"] .pds-board .board-row.notice-row,
+[data-theme="dark"] .pds-row.notice-row {
+    background: rgba(233, 69, 96, 0.15);
+}
+
+[data-theme="dark"] .pds-board .board-row.notice-row:hover,
+[data-theme="dark"] .pds-row.notice-row:hover {
+    background: rgba(233, 69, 96, 0.22);
+}
+
+/* 검색 버튼 */
+.search-btn.pds-search-btn,
+.search-fab.pds-fab {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+}
+
+/* 글쓰기 FAB */
+.write-fab.pds-write-fab {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+/* 이미지 배지 */
+.image-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    color: #ec4899;
+    flex-shrink: 0;
+}
+
+.image-badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* 댓글 수 */
+.pds-row .comment-count {
+    color: #10b981;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 6px;
+    flex-shrink: 0;
+}
+
+/* 파일 사이즈 */
+.file-size {
+    color: var(--text-light);
+    font-size: 11px;
+    margin-left: 6px;
+    flex-shrink: 0;
+    background: var(--bg-main);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ========================================
+   자료실 상세보기
+   ======================================== */
+
+/* 게시글 헤더 */
+.pds-post-header {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+}
+
+.pds-post-title-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.pds-post-category {
+    display: inline-block;
+    padding: 4px 10px;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.pds-post-category.program { background: rgba(99, 102, 241, 0.1); color: #6366f1; }
+.pds-post-category.document { background: rgba(245, 158, 11, 0.1); color: #f59e0b; }
+.pds-post-category.image { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+.pds-post-category.video { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
+.pds-post-category.music { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
+
+.pds-post-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.pds-post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.pds-post-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-secondary);
+}
+
+.pds-post-meta-item span {
+    color: var(--text-secondary);
+}
+
+.pds-post-meta-item svg {
+    width: 14px;
+    height: 14px;
+    opacity: 0.7;
+    color: var(--text-light);
+}
+
+/* 다운로드 정보 박스 */
+.pds-download-info-box {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+}
+
+.pds-download-info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.pds-download-info-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pds-download-info-label {
+    padding: 6px 12px;
+    background: #10b981;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.pds-download-info-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.pds-download-info-value.point { color: #f59e0b; }
+.pds-download-info-value.cash { color: var(--accent); }
+
+/* 첨부파일 목록 */
+.pds-file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pds-file-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--bg-main);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.pds-file-num {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.pds-file-icon {
+    flex-shrink: 0;
+}
+
+.pds-file-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.pds-file-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pds-file-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pds-file-name:hover {
+    color: #10b981;
+}
+
+.pds-file-size {
+    font-size: 11px;
+    color: var(--text-light);
+    background: var(--bg-card);
+    padding: 2px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.pds-file-download-count {
+    font-size: 11px;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+.pds-file-download-btn {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.pds-file-download-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+.pds-file-download-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* 게시글 본문 */
+.pds-post-content {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+    min-height: 200px;
+}
+
+.pds-post-body {
+    line-height: 1.8;
+    color: var(--text-primary);
+}
+
+.pds-post-body p {
+    margin-bottom: 16px;
+}
+
+.pds-post-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+/* 본문 액션 버튼 */
+.pds-post-content-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.pds-content-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 13px;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.pds-content-action-btn:hover {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.pds-content-action-btn.active {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+}
+
+.pds-content-action-btn .action-icon {
+    font-size: 18px;
+}
+
+.pds-content-action-btn .action-count {
+    font-weight: 700;
+}
+
+/* 이전/다음글 */
+.pds-post-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.pds-pn-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.pds-pn-item:hover {
+    border-color: #10b981;
+    background: var(--bg-main);
+}
+
+.pds-pn-item.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.pds-pn-item.next {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.pds-pn-icon {
+    width: 36px;
+    height: 36px;
+    background: #10b981;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+
+.pds-pn-item:hover .pds-pn-icon {
+    background: #059669;
+    transform: scale(1.05);
+}
+
+.pds-pn-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.5;
+}
+
+.pds-pn-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.pds-pn-label {
+    font-size: 11px;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
+.pds-pn-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* 하단 버튼 */
+.pds-post-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.pds-bottom-btns-right {
+    display: flex;
+    gap: 8px;
+}
+
+.pds-bottom-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+}
+
+.pds-bottom-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.pds-bottom-btn.btn-list {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+.pds-bottom-btn.btn-list:hover {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.pds-bottom-btn.btn-edit {
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+}
+
+.pds-bottom-btn.btn-edit:hover {
+    background: rgba(99, 102, 241, 0.2);
+}
+
+.pds-bottom-btn.btn-delete {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.pds-bottom-btn.btn-delete:hover {
+    background: rgba(239, 68, 68, 0.2);
+}
+
+.pds-bottom-btn.btn-write {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+}
+
+.pds-bottom-btn.btn-write:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+/* ========================================
+   자료실 글쓰기
+   ======================================== */
+
+.pds-write-form {
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.pds-form-section {
+    padding: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.pds-form-section:last-child {
+    border-bottom: none;
+}
+
+.pds-form-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+}
+
+.pds-form-section-title svg {
+    width: 20px;
+    height: 20px;
+    color: #10b981;
+}
+
+.pds-form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.pds-form-row:last-child {
+    margin-bottom: 0;
+}
+
+.pds-form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.pds-form-group:last-child {
+    margin-bottom: 0;
+}
+
+.pds-form-group.half {
+    flex: 0 0 calc(50% - 8px);
+}
+
+.pds-form-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pds-form-label .required {
+    color: var(--accent);
+    font-size: 14px;
+}
+
+.pds-form-input,
+.pds-form-select,
+.pds-form-textarea {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.pds-form-input:focus,
+.pds-form-select:focus,
+.pds-form-textarea:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.pds-form-input::placeholder,
+.pds-form-textarea::placeholder {
+    color: var(--text-light);
+}
+
+.pds-form-textarea {
+    min-height: 300px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.pds-form-hint {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+/* 파일 업로드 */
+.pds-file-upload-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pds-file-upload-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: var(--bg-main);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.pds-file-upload-num {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.pds-file-existing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+}
+
+.pds-file-delete-check {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: #ef4444;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.pds-file-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    font-size: 13px;
+    color: var(--text-primary);
+}
+
+.pds-file-desc {
+    width: 200px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    font-size: 13px;
+    color: var(--text-primary);
+    flex-shrink: 0;
+}
+
+.pds-file-upload-hint {
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* 링크 */
+.pds-link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pds-link-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pds-link-num {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* 옵션 */
+.pds-options-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.pds-option-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: var(--bg-main);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pds-option-item:hover {
+    border-color: #10b981;
+}
+
+.pds-option-item input {
+    display: none;
+}
+
+.pds-option-check {
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.pds-option-item input:checked + .pds-option-check {
+    background: #10b981;
+    border-color: #10b981;
+}
+
+.pds-option-item input:checked + .pds-option-check::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.pds-option-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* 버튼 영역 */
+.pds-form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: var(--bg-main);
+    border-top: 1px solid var(--border);
+}
+
+.pds-btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.pds-btn {
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+    border: none;
+    text-decoration: none;
+}
+
+.pds-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.pds-btn.btn-cancel {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+}
+
+.pds-btn.btn-cancel:hover {
+    border-color: var(--text-light);
+    color: var(--text-primary);
+}
+
+/* ========================================
+   PDS 글쓰기 폼 - 퍼블 디자인 적용
+   ======================================== */
+
+/* 다운로드 정보 폼 박스 */
+.pds-download-info-form {
+    background: var(--bg-main);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border);
+}
+
+/* 글쓰기에서의 다운로드 정보 그리드 */
+.pds-write-form .pds-download-info-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.pds-write-form .pds-download-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pds-write-form .pds-download-info-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0;
+    background: none;
+}
+
+/* 비용 타입 선택 버튼 */
+.pds-cost-type-select {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.pds-cost-type-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.pds-cost-type-btn:hover {
+    border-color: #10b981;
+}
+
+.pds-cost-type-btn.active {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    border-color: transparent;
+    color: white;
+}
+
+.pds-cost-type-btn.active.cash {
+    background: linear-gradient(135deg, var(--accent), #ff6b6b);
+}
+
+.pds-cost-type-btn.active.point {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+/* 광고 유무 토글 */
+.pds-ad-toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    margin-top: 16px;
+}
+
+.pds-ad-toggle-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.pds-ad-toggle-label small {
+    display: block;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 2px;
+    font-weight: 400;
+}
+
+.pds-ad-toggle {
+    position: relative;
+    width: 52px;
+    height: 28px;
+    background: var(--border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pds-ad-toggle.active {
+    background: linear-gradient(135deg, #f59e0b, #fbbf24);
+}
+
+.pds-ad-toggle::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.pds-ad-toggle.active::after {
+    left: 27px;
+}
+
+.pds-ad-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pds-ad-badge.has-ad {
+    background: rgba(245, 158, 11, 0.15);
+    color: #f59e0b;
+}
+
+.pds-ad-badge.no-ad {
+    background: rgba(16, 185, 129, 0.15);
+    color: #10b981;
+}
+
+/* 자료 링크 아이템 - 글쓰기용 */
+.pds-write-form .pds-link-item {
+    background: var(--bg-main);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+}
+
+.pds-write-form .pds-link-item:last-child {
+    margin-bottom: 0;
+}
+
+.pds-link-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.pds-link-number {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.pds-link-number span {
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.pds-link-fields {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 12px;
+}
+
+.pds-link-name {
+    max-width: 150px;
+}
+
+/* 파일 업로드 영역 */
+.pds-file-upload-area {
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    padding: 40px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 16px;
+}
+
+.pds-file-upload-area:hover {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.05);
+}
+
+.pds-file-upload-area.dragover {
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.pds-file-upload-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 12px;
+    color: var(--text-light);
+}
+
+.pds-file-upload-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+/* ========================================
+   자료실 반응형
+   ======================================== */
+
+@media (max-width: 992px) {
+    .pds-board .board-table-header {
+        display: none;
+    }
+
+    .pds-board .board-row,
+    .pds-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+    }
+
+    .pds-post-nav {
+        grid-template-columns: 1fr;
+    }
+
+    .pds-pn-item.next {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .pds-download-info-grid {
+        flex-direction: column;
+    }
+
+    .pds-form-row {
+        flex-direction: column;
+    }
+
+    .pds-form-group.half {
+        flex: 1;
+    }
+
+    .pds-write-form .pds-download-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .pds-link-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .pds-link-name {
+        max-width: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .pds-post-header {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .pds-post-title {
+        font-size: 18px;
+    }
+
+    .pds-post-title-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .pds-post-meta {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .pds-download-info-box {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .pds-post-content {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .pds-post-content-actions {
+        gap: 6px;
+    }
+
+    .pds-content-action-btn {
+        padding: 8px 10px;
+        font-size: 12px;
+        gap: 4px;
+    }
+
+    .pds-content-action-btn .action-icon {
+        font-size: 14px;
+    }
+
+    .pds-post-bottom {
+        flex-direction: column;
+    }
+
+    .pds-bottom-btns-right {
+        flex-direction: column;
+    }
+
+    .pds-bottom-btn {
+        justify-content: center;
+    }
+
+    .pds-form-section {
+        padding: 16px;
+    }
+
+    .pds-form-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .pds-btn-group {
+        width: 100%;
+    }
+
+    .pds-btn-group .pds-btn {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .pds-file-upload-item {
+        flex-wrap: wrap;
+    }
+
+    .pds-file-desc {
+        width: 100%;
+    }
+
+    .pds-write-form .pds-download-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pds-ad-toggle-wrap {
+        flex-wrap: wrap;
+    }
+
+    .pds-ad-toggle-label {
+        flex: 1 1 100%;
+        margin-bottom: 8px;
+    }
+
+    .pds-cost-type-select {
+        flex-wrap: wrap;
+    }
+
+    .pds-cost-type-btn {
+        flex: 1 1 calc(50% - 4px);
+    }
+}

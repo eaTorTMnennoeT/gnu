@@ -1,0 +1,168 @@
+/* ========================================
+   Premium Main - 메인 페이지, 베스트글
+   ======================================== */
+
+/* 페이지 타이틀 */
+.page-title-section {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.page-title {
+    display: flex; align-items: center; gap: 12px;
+}
+
+.page-title-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, var(--accent) 0%, #ff6b6b 100%);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.page-title-icon svg { width: 24px; height: 24px; color: white; }
+
+.page-title h1 { font-size: 24px; font-weight: 700; margin: 0; }
+.page-title p { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+
+.write-btn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 8px 14px;
+    background: linear-gradient(135deg, var(--accent) 0%, #ff6b6b 100%);
+    border: none; border-radius: 8px;
+    color: white; font-size: 13px; font-weight: 600;
+    cursor: pointer; transition: all 0.3s;
+    box-shadow: 0 2px 8px var(--accent-glow);
+    text-decoration: none;
+}
+
+.write-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px var(--accent-glow); color: white; }
+.write-btn svg { width: 14px; height: 14px; }
+
+/* 베스트 글 섹션 */
+.best-section {
+    background: var(--bg-card);
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+.best-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+}
+
+.best-tab {
+    flex: 1;
+    padding: 14px 16px;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.best-tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-main);
+}
+
+.best-tab.active {
+    color: var(--accent);
+    background: var(--bg-main);
+    border-bottom: 2px solid var(--accent);
+    margin-bottom: -1px;
+}
+
+.best-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.best-empty {
+    grid-column: 1 / -1;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+.best-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid var(--border);
+}
+
+.best-item:nth-child(odd) {
+    border-right: 1px solid var(--border);
+}
+
+.best-item:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+.best-item:hover {
+    background: var(--bg-main);
+}
+
+.rank-badge {
+    width: 20px; height: 20px;
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 800;
+    flex-shrink: 0;
+}
+
+.rank-1, .rank-badge.rank-1 { background: linear-gradient(135deg, #fbbf24, #f59e0b); color: #78350f; }
+.rank-2, .rank-badge.rank-2 { background: linear-gradient(135deg, #9ca3af, #6b7280); color: #1f2937; }
+.rank-3, .rank-badge.rank-3 { background: linear-gradient(135deg, #d97706, #b45309); color: #451a03; }
+.rank-other, .rank-badge.rank-other { background: transparent; color: var(--text-light); font-weight: 600; }
+
+.best-item-title {
+    flex: 1;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    min-width: 0;
+}
+
+.best-item-likes {
+    font-size: 12px;
+    color: var(--text-light);
+    flex-shrink: 0;
+}
+
+/* 반응형 - 메인 */
+@media (max-width: 768px) {
+    .page-title-section {
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .page-title-icon { width: 40px; height: 40px; border-radius: 10px; }
+    .page-title-icon svg { width: 20px; height: 20px; }
+    .page-title h1 { font-size: 18px; }
+    .page-title p { font-size: 11px; }
+    .write-btn { padding: 6px 12px; font-size: 12px; }
+    .write-btn svg { width: 12px; height: 12px; }
+
+    .best-list {
+        grid-template-columns: 1fr;
+    }
+    .best-item:nth-child(odd) {
+        border-right: none;
+    }
+    .best-item:last-child {
+        border-bottom: none;
+    }
+}
